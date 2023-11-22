@@ -1,3 +1,3 @@
 # Projeto-Machine-Learning
- 
-comando para instalar as bibliotecas: pip install Flask scikit-learn matplotlib numpy
+Projeto de machine learning referente a diciplina de topicos  
+-> comando para caso precise baixar as libs: pip install Flask scikit-learn matplotlib numpy
