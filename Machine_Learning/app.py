@@ -1,3 +1,5 @@
+# -> comando para caso precise baixar as libs: pip install Flask scikit-learn matplotlib numpy
+
 from flask import Flask, render_template, request
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -21,14 +23,13 @@ def load_data():
     y = iris.target
     return X, y
 
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
-
 
 
 @app.route('/train', methods=['POST'])
