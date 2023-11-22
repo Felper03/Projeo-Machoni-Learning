@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning Iris</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+
+</head>
+<body>
+
+    <form action="/train" method="post" style="margin: 0;">
+        <h1>Machine learning</h1>
+        <label for="classifier">Selecione o Classificador:</label>
+        <select name="classifier" id="classifier">
+            <option value="KNN">KNN</option>
+            <option value="MLP">MLP</option>
+            <option value="DT">Decision Tree</option>
+            <option value="RF">Random Forest</option>
+        </select><br>
+
+        <div id="parametro1">
+            <label for="parametro1" id="labelParam1" ></label>
+            <input type="text" name="parametro1" id="param1" required placeholder="Parametro 1:"><br>
+        </div>
+
+        <div id="parametro2">
+            <label for="parametro2" id="labelParam2"></label>
+            <input type="text" name="parametro2" id="param2" placeholder="Parametro 2:"><br>
+        </div>
+
+        <div id="parametro3">
+            <label for="parametro3" id="labelParam3"></label>
+            <input type="text" name="parametro3" id="param3" placeholder="Parametro 3:"><br>
+        </div>
+
+        <input type="submit" value="Enviar Parametros">
+    </form>
+
+    <script >
+        function handleSelectedClassifier() {
+            const param1 = document.getElementById('param1');
+            const param2 = document.getElementById('param2');
+            const param3 = document.getElementById('param3');
+
+            param1.value = '';
+            param2.value = '';
+            param3.value = '';
+
+            const fieldsCallback = {
+                'KNN': () => {
+                    document.getElementById('labelParam1').textContent = 'n_neighbors:';
+                    document.getElementById('labelParam2').textContent = 'leaf_size:';
+                    document.getElementById('labelParam3').textContent = 'n_jobs:';
+                },
+                'MLP': () => {
+                    document.getElementById('labelParam1').textContent = 'max_iter:';
+                    document.getElementById('labelParam2').textContent = 'alpha:';
+                    document.getElementById('labelParam3').textContent = 'max_fun:';
+                },
+                'DT': () => {
+                    document.getElementById('labelParam1').textContent = 'max_depth:';
+                    document.getElementById('labelParam2').textContent = 'random_state:';
+                    document.getElementById('labelParam3').textContent = 'max_leaf_nodes:';
+                },
+                'RF': () => {
+                    document.getElementById('labelParam1').textContent = 'n_estimators:';
+                    document.getElementById('labelParam2').textContent = 'max_depth:';
+                    document.getElementById('labelParam3').textContent = 'random_state:';
+                }
+            };
+
+            fieldsCallback[document.getElementById('classifier').value]();
+        }
+
+        window.onload = () => {
+            const classifier = document.getElementById('classifier');
+            classifier.addEventListener('change', handleSelectedClassifier);
+            handleSelectedClassifier();
+        };
+
+    </script>
+</body>
+</html>

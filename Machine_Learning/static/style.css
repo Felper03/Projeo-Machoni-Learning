@@ -1,0 +1,51 @@
+ body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("photo-1590377663350-cfc38d4b6e43.avif");
+            background-size: cover;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        form {
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
+            background-color: plum;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        input[type="submit"] {
+            background-color: purple;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #a2dda0;
+        }
+
+        #parametro1,
+        #parametro2,
+        #parametro3

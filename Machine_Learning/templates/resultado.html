@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados</title>
+    <style>
+        body{
+            height: 100vh;
+            background-image: linear-gradient(to top, purple, mediumpurple ) ;
+            color: #dddddd;
+        }
+        a {
+            color: #dddddd;
+            background-color: #333333;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        a:hover {
+            background-color: #a2dda0;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Resultados</h1>
+
+    <div class="result-container">
+        <h2>Métricas</h2>
+        <p>Accuracy: {{ accuracy }}</p>
+        <p>Precision: {{ precision }}</p>
+        <p>Recall: {{ recall }}</p>
+        <p>F1 Score: {{ f1_score }}</p>
+    </div>
+
+    <div class="result-container">
+        <h2>Matriz de confusão:</h2>
+        <img src="data:image/png;base64,{{ confusion_matrix }}" alt="Confusion Matrix">
+    </div>
+    <br>
+    <a href="/">Voltar</a>
+</body>
+</html>
